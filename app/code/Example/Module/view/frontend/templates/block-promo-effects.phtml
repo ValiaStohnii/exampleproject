@@ -1,8 +1,8 @@
 <script>
-    require(['jquery'], function($){
+    require(['jquery', 'Example_Module/js/fade-in-element'], function($, fadeInElement){
         'use strict'
         $(function (){
-            console.log('block promo')
+            fadeInElement('.block-promo', 4000)
         })
     })
 </script>
