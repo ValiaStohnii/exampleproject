@@ -5,8 +5,8 @@ var config ={
         }
     },
     "paths": {
-        "vue": "https://unpkg.com/vue@3.2.47/dist/vue.global"
-        // "vue": "Example_Module/js/vue"
+        "vue": "https://cdn.jsdelivr.net/npm/vue/dist/vue"
+        //"vue": "Example_Module/js/vue"
     }
 }
 console.log('see you')

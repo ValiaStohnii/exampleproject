@@ -17,7 +17,7 @@ cross-site scripting attacks (XSS).
                 The id is arbitrary but must be unique, while the type is expected to be "host".
                 The value for this child is finally the full URL you wish to allowlist.
                 -->
-                <value id="unpkg" type="host">https://unpkg.com</value>
+                <value id="jsdelivr" type="host">https://cdn.jsdelivr.net</value>
             </values>
         </policy>
     </policies>
