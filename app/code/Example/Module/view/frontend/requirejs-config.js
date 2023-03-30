@@ -14,6 +14,16 @@
 // tells Magento to override this file for all RequireJS modules, and the
 // convention is "FileToOverride": "FileThatOverrides" using RequireJS notation.
 
+    //Mixins are specific to Magento and not part of the standard RequireJS spec,
+// which is why Magento nests these within a child "config" property. These are
+// used when you'd like to "extend" the original JavaScript component, rather
+// than override it. This includes adding, updating or removing specific
+// functions of the original object.
+// Similar to other RequireJS implementations, this works by defining the
+// original object you'd like to modify in the shorthand notation, and then
+// assigning it to a child property of the JavaScript component you are extending
+// it with, and setting that property to true.
+
     var config ={
     "map": {
         "*": {
@@ -31,7 +41,14 @@
     "shim": {
         "Example_Module/js/jQuery-log": ["jquery"]
     },
-    "deps": ["Example_Module/js/every-page"]
+    "deps": ["Example_Module/js/every-page"],
+    "config": {
+        "mixins": {
+            "Magento_Ui/js/view/messages": {
+                "Example_Module/js/messages-mixin": true
+            }
+        }
+    }
 }
 console.log('see you')
 
