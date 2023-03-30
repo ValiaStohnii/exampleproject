@@ -10,10 +10,15 @@
 //     Defining a file under "deps" ensures it loads on every single page. This
 // is generally an anti-pattern, as explicit dependency loading is preferred.
 
+// Use "map" to easily override any other JavaScript component. The asterisk
+// tells Magento to override this file for all RequireJS modules, and the
+// convention is "FileToOverride": "FileThatOverrides" using RequireJS notation.
+
     var config ={
     "map": {
         "*": {
-            "fadeInElement": "Example_Module/js/fade-in-element"
+            "fadeInElement": "Example_Module/js/fade-in-element",
+            "Magento_Review/js/submit-review":  "Example_Module/js/submit-review"
         }
     },
     "paths": {
@@ -29,3 +34,7 @@
     "deps": ["Example_Module/js/every-page"]
 }
 console.log('see you')
+
+// Пошук елементу через термінал
+// grep -R 'top-cart-btn-checkout' vendor/magento/module-*
+// grep -R 'top-cart-btn-checkout' --include=*.js vendor/magento/module-*
