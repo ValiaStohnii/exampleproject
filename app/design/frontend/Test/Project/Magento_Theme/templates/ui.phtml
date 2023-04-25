@@ -1,12 +1,16 @@
-<div id="custom">
-    <span data-bind="text: text">text</span>
+<div data-bind="scope: 'custom'">
+    <span data-bind="text: text"></span>
 </div>
-<script>
-    require(['knockout'], ko => {
-        const viewModel = function () {
-            this.text = 'text'
-        };
-
-        ko.applyBindings(new viewModel(), custom)
-    });
+<script type="text/x-magento-init">
+   {
+       "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "custom": {
+                        "component": "Magento_Theme/js/view/custom"
+                    }
+                }
+            }
+       }
+   }
 </script>
