@@ -5,11 +5,29 @@
  * See COPYING.txt for license details.
  */
 -->
-<page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-    <update handle="default_head_blocks"/>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="content">
             <block name="ui.test" template="Magento_Theme::ui.phtml" />
+
+            <block class="Magento\Framework\View\Element\Template" name="button" template="Magento_Theme::buttons/dynamic_button.phtml" >
+                <arguments>
+                     <argument name="css_class" xsi:type="string">white</argument>
+                     <argument name="css_class2" xsi:type="string">black</argument>
+                </arguments>
+            </block>
+
+            <block name="custom.block" template="Magento_Theme::custom.phtml">
+                <block name="default.xml_before1" before="-"/>
+                <block name="default.xml_before2" before="-"/>
+                <block name="default.xml_after" after="-"/>
+                <block name="default.xml_after2" after="-"/>
+            </block>
+            <block class="Magento\Cms\Block\Block" name="block1">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">block1</argument>
+                </arguments>
+            </block>
         </referenceContainer>
     </body>
 </page>
