@@ -82,6 +82,7 @@
                     </block>
                 </block>
             </container>
+            <block template="Magento_Catalog::handles.phtml"/>
         </referenceContainer >
     </body>
 </page>
