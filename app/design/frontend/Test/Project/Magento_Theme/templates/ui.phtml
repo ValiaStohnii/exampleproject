@@ -1,5 +1,7 @@
 <div data-bind="scope: 'custom'">
-<!--    <span data-bind="text: text"></span>-->
+    <span data-bind="text: text"></span>
+    <span data-bind="i18n: 'text has to be translated'"></span>
+    <span data-bind="text: $t('text has %1 to be translated').replace(%1, customVar)"></span>
 </div>
 <script type="text/x-magento-init">
    {
