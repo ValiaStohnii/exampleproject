@@ -5,6 +5,7 @@ define(['uiComponent', 'ko'], (uiComponent, ko)=>{
         defaults: {
             // text: ko.observable('default text'),
             // text2: $t('default text')
+            template: 'Magento_Theme/custom',
             isActive: ko.observable(false)
         },
 
