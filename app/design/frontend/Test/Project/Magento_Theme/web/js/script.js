@@ -1,5 +1,5 @@
-define([], () => {
-    return (config, element) => {
-        console.log('script init')
-    };
-});
+// define([], () => {
+//     return (config, element) => {
+//         console.log('script init')
+//     };
+// });

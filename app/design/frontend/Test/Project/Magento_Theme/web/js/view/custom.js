@@ -3,22 +3,47 @@ define(['uiComponent', 'ko'], (uiComponent, ko)=>{
 
     return uiComponent.extend({
         defaults: {
-            // text: ko.observable('default text'),
-            // text2: $t('default text')
             template: 'Magento_Theme/custom',
-            isActive: ko.observable(false)
+            // isActive: ko.observable(true),
+            // text: ko.observable('default text'),
+            // items: ko.observableArray(['item', 'item'])
+
+            // трекові обсерви
+            isActive: true,
+            text: 'default text',
+            items: ['item', 'item'],
+            tracks: {
+                text: true,
+                items: true,
+                isActive: true
+            }
         },
 
-        initialize(){
+        // спрацьовує раніше за initialize() і має повертати return this;
+        initObservable() {
             this._super();
 
-            // setTimeout(()=>{
-            //     this.text('update text');
-            // }, 3000)
+            // console.log(this.text);
+            // this.text = ko.observable(this.text);
+
+            this.observe('text');
+
+            return this;
         },
 
-        toggleState() {
-            this.isActive (!this.isActive());
-        }
+        initialize() {
+            this._super();
+
+            setTimeout(()=>{
+                // this.isActive(false);
+                // this.text('update text');
+                this.items.push('item');
+
+                // трекові обсерви
+                this.isActive=false;
+                this.text='update text';
+
+            }, 3000);
+        },
     })
 });
